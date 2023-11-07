@@ -143,7 +143,7 @@ def main(raw_datasets, args):
 
     # Utilize 2 or more GPUs for training
     if device is torch.device("cuda"):
-        model = nn.DataParallel(model) 
+        model = nn.DataParallel(model, [0,1]) 
     
     model.to(device)
 
